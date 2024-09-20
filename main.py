@@ -32,9 +32,7 @@ def criar_grafico_burn(dias, trabalho_total, trabalho_concluido):
     plt.show()
 
 def obter_entrada_usuario():
-    print("Bem-vindo à ferramenta de geração de gráficos Burn-up e Burn-down!")
-    print("Por favor, siga as instruções para fornecer seus dados.\n")
-
+    print("\nVamos criar seu gráfico Burn-up/Burn-down!")
     try:
         # Entrada dos dias
         dias_input = input("Digite os dias do projeto (exemplo: 1,2,3,4,5): ")
@@ -57,6 +55,38 @@ def obter_entrada_usuario():
         print("Por favor, tente novamente.\n")
         obter_entrada_usuario()
 
-# Iniciar a interação com o usuário
-obter_entrada_usuario()
+def mostrar_instrucoes():
+    print("\n--- Instruções sobre Gráficos Burn-up e Burn-down ---\n")
+    print("1. O gráfico **Burn-up** mostra o progresso do trabalho concluído ao longo do tempo.")
+    print("2. O gráfico **Burn-down** mostra o trabalho restante a ser concluído.")
+    print("3. Utilizando esses gráficos, você pode visualizar o andamento do seu projeto e identificar se está no caminho certo para cumprir prazos.")
+    print("\n### Como usar esta ferramenta:\n")
+    print("1. Escolha a opção 'Criar Gráfico' no menu.")
+    print("2. Insira os dias do projeto, a quantidade de trabalho total e o trabalho já concluído.")
+    print("3. O gráfico será gerado automaticamente para que você visualize o progresso do seu projeto.\n")
+    print("Pressione Enter para voltar ao menu.")
+
+    input()  # Pausa para o usuário ler as instruções
+
+def menu_principal():
+    while True:
+        print("\n--- Menu Principal ---")
+        print("1. Criar Gráfico Burn-up/Burn-down")
+        print("2. Instruções")
+        print("3. Sair")
+
+        opcao = input("\nEscolha uma opção: ")
+
+        if opcao == '1':
+            obter_entrada_usuario()
+        elif opcao == '2':
+            mostrar_instrucoes()
+        elif opcao == '3':
+            print("\nSaindo... Até logo!")
+            break
+        else:
+            print("\nOpção inválida, por favor escolha novamente.")
+
+# Iniciar o programa
+menu_principal()
 
